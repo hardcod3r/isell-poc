@@ -32,6 +32,7 @@ class InstallCommand extends Command
         $this->info('Migrate is done');
         Artisan::call('db:seed', ['class' => 'Shop\Data\Seeders\ShopSeeder']);
         $this->info('Seeding done!');
+        Artisan::call('key:generate');
         $this->info('Installation done!');
     }
 }
